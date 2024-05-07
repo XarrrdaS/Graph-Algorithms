@@ -3,7 +3,7 @@ def load_graph():
     graph = [[] for _ in range(num_vertices)]
 
     for vertex in range(num_vertices):
-        successors = input(f"Podaj następniki wierzchołka {vertex}: ").split()
+        successors = input(f"Podaj następniki wierzchołka {vertex+1}: ").split()
         graph[vertex] = [int(successor) for successor in successors]
 
     return graph
@@ -20,3 +20,10 @@ def load_graph_heredoc():
         graph[vertex] = [int(successor) for successor in successors]
 
     return graph
+
+def main():
+    graph = load_graph()
+    print(graph)
+
+if __name__ == "__main__":
+    main()
