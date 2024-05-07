@@ -25,5 +25,8 @@ def main():
     graph = load_graph()
     print(graph)
 
+    graph = load_graph_heredoc()
+    print(graph)
+
 if __name__ == "__main__":
     main()
