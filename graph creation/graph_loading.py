@@ -3,7 +3,7 @@ def load_graph():
     graph = [[] for _ in range(num_vertices)]
 
     for vertex in range(num_vertices):
-        successors = input(f"Podaj następników wierzchołka {vertex}: ").split()
+        successors = input(f"Podaj następniki wierzchołka {vertex}: ").split()
         graph[vertex] = [int(successor) for successor in successors]
 
     return graph
