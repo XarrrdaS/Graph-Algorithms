@@ -18,10 +18,10 @@ def load_graph(representation):
             graph[vertex] = [int(successor) for successor in successors]
         elif representation == 1:
             for successor in successors:
-                graph[vertex][int(successor)] = 1
+                graph[vertex][int(successor) - 1] = 1
         elif representation == 3:
             for successor in successors:
-                graph[vertex][int(successor)] = True
+                graph[vertex][int(successor) - 1] = True
 
     return graph
 
