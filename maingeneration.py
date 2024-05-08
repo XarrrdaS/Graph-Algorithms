@@ -4,7 +4,7 @@ from operations.mainoperations import main_operations
 
 def main_generation(representation):
     while True:
-            print('\n| 1 - Graph generation | 2 - Graph loading by hand | 3 - Graph loading using heredoc | 4 - Exit |\n')
+            print('\n| 1 - Graph generation | 2 - Graph loading by hand | 3 - Graph loading using heredoc | 4 - Exit to representation options | 5 - Close a program completely |\n')
             choice = input('Select a graph importing option you would like to take action with:\n> ')
 
             if choice == '1':
@@ -22,7 +22,11 @@ def main_generation(representation):
             elif choice == '4':
 
                 break
-
+            
+            elif  choice == '5':
+                     
+                    exit()
+                    
             else:
                 print("Select a valid option!\n")
 
