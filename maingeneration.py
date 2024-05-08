@@ -25,7 +25,7 @@ def main_generation(representation):
             
             elif  choice == '5':
                      
-                    exit()
+                exit()
                     
             else:
                 print("Select a valid option!\n")
