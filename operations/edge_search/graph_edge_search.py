@@ -39,6 +39,6 @@ def search(graph, representation):
         edges = search_edges_3_table(graph, start-1, end-1)
 
     if edges:
-        print("Edge exists in the graph.")
+        print("\nEdge exists in the graph.")
     else:
-        print("Edge does not exist in the graph.")
+        print("\nEdge does not exist in the graph.")

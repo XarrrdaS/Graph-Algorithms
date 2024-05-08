@@ -1,5 +1,5 @@
 def load_graph(representation):
-    num_vertices = int(input("Podaj liczbę wierzchołków: "))
+    num_vertices = int(input("Insert nodes number:\n> "))
     graph = None
 
     if representation == 2:
@@ -9,10 +9,10 @@ def load_graph(representation):
     elif representation == 3:
         graph = [[False] * num_vertices for _ in range(num_vertices)]
     else:
-        raise ValueError("Nieprawidłowa reprezentacja grafu")
+        raise ValueError("Incorrect graph representation")
 
     for vertex in range(num_vertices):
-        successors = input(f"Podaj następniki wierzchołka {vertex+1}: ").split()
+        successors = input(f"Specify the successors of the vertex {vertex+1}: ").split()
 
         if representation == 2:
             graph[vertex] = [int(successor) for successor in successors]
@@ -26,7 +26,7 @@ def load_graph(representation):
     return graph
 
 def load_graph_heredoc(representation):
-    num_vertices = int(input("Podaj liczbę wierzchołków: "))
+    num_vertices = int(input("Enter the number of vertices:\n> "))
     graph = None
 
     if representation == 2:
@@ -36,9 +36,9 @@ def load_graph_heredoc(representation):
     elif representation == 3:
         graph = [[False] * num_vertices for _ in range(num_vertices)]
     else:
-        raise ValueError("Nieprawidłowa reprezentacja grafu")
+        raise ValueError("Incorrect graph representation")
 
-    input_data = input("Wprowadź dane za pomocą heredoc: ")
+    input_data = input("Enter data using heredoc:\n> ")
     lines = input_data.strip().split('\n')
 
     for vertex, line in enumerate(lines):

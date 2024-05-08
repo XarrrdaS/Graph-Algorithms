@@ -49,8 +49,8 @@ def generate_dag_table(nodes, saturation):
     return adjacency_table
 
 def generate(representation):
-    nodes = int(input("\nPodaj liczbę wierzchołków:\n> "))
-    saturation = float(input("Podaj wartość nasycenia (między 0 a 100):\n> "))
+    nodes = int(input("\nInsert nodes number:\n> "))
+    saturation = float(input("Specify the saturation value (between 0 and 100):\n> "))
     
     if representation == 1:
         adjacency_matrix = generate_dag_matrix(nodes, saturation)
