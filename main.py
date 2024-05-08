@@ -2,7 +2,7 @@ from maingeneration import main_generation
 
 while True:
         print('\n| 1 - Matrix | 2 - List | 3 - Table | 4 - Exit |\n')
-        choice = input('Select an option you would like to take action with:\n> ')
+        choice = input('Select a representation you would like to take action with:\n> ')
 
         if choice == '1':
 

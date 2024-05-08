@@ -4,8 +4,8 @@ from operations.mainoperations import main_operations
 
 def main_generation(representation):
     while True:
-            print('\n| 1 - Graph generation | 2 - Graph loading by hand | 3 - Graph loading heredoc | 4 - Exit |\n')
-            choice = input('Select an option you would like to take action with:\n> ')
+            print('\n| 1 - Graph generation | 2 - Graph loading by hand | 3 - Graph loading using heredoc | 4 - Exit |\n')
+            choice = input('Select a graph importing option you would like to take action with:\n> ')
 
             if choice == '1':
 
