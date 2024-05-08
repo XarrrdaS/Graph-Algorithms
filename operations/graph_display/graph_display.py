@@ -1,14 +1,28 @@
 def display_graph(graph, representation):
-    if representation == 1 or representation == 3:
+
+    if representation == 1: 
+        print("   ", end="")
+        for i in range(len(graph[0])):
+            print(f" {i+1} ", end="")
+        print()
+        print("-" * (4 * len(graph[0])))
+        for i, row in enumerate(graph):
+            print(f"{i+1}| ", end="")
+            for element in row:
+                print(f" {int(element)} ", end="")
+            print()
+            
+    elif representation == 2:
+        for node, neighbors in enumerate(graph):
+            print(f"Node {node+1}: {neighbors}")
+
+    elif representation == 3:
         for vertex, neighbors in enumerate(graph, start=1):
             print(f"Node {vertex}:")
             for neighbor_index, neighbor in enumerate(neighbors, start=1):
                 if neighbor:
                     print(f"  - {neighbor_index}")
-    elif representation == 2:
-        for vertex, neighbors in enumerate(graph, start=1):
-            print(f"Node {vertex}:")
-            for neighbor in neighbors:
-                print(f"  - {neighbor}")
+
+
     else:
-        raise ValueError("Invalid graph representation!")
+        print("Invalid representation selected.")
