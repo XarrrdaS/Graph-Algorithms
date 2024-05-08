@@ -14,7 +14,7 @@ def generate_dag(nodes, saturation):
                 edges -= 1
         i += 1
 
-    return adjacency_matrix
+    return (adjacency_matrix,1)
 
 def main():
     nodes = int(input("Podaj liczbę wierzchołków: "))
