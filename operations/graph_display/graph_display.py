@@ -7,7 +7,10 @@ def display_graph(graph, representation):
         print()
         print("-" * (4 * len(graph[0])))
         for i, row in enumerate(graph):
-            print(f"{i+1}| ", end="")
+            if i < 9:
+                print(f"{i+1} | ", end="")
+            else:
+                print(f"{i+1}| ", end="")
             for element in row:
                 print(f" {int(element)} ", end="")
             print()

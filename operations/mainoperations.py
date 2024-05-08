@@ -3,6 +3,7 @@ from operations.edge_search.graph_edge_search import search
 from operations.traversal.graph_BFS import bfs
 from operations.traversal.graph_DFS import dfs
 from operations.topological_sort.kahn import kahn
+from operations.topological_sort.tarjan import tarjan
 
 def main_operations(graph, representation):
     while True:
@@ -31,7 +32,7 @@ def main_operations(graph, representation):
 
             elif choice == '6':
             
-                print("trojan coming soon\n")
+                tarjan(graph, representation)
 
             elif choice == '7':
             
