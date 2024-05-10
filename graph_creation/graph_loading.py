@@ -1,13 +1,14 @@
 def load_graph(representation):
     num_vertices = int(input("Insert nodes number:\n> "))
     graph = None
+    i = 0
 
     if representation == 2:
         graph = [[] for _ in range(num_vertices)]
     elif representation == 1:
         graph = [[0] * num_vertices for _ in range(num_vertices)]
     elif representation == 3:
-        graph = [[False] * num_vertices for _ in range(num_vertices)]
+        graph = [[] for _ in range(num_vertices)]
     else:
         raise ValueError("Incorrect graph representation")
 
@@ -21,20 +22,22 @@ def load_graph(representation):
                 graph[vertex][int(successor) - 1] = 1
         elif representation == 3:
             for successor in successors:
-                graph[vertex][int(successor) - 1] = True
+                graph[vertex].append((int(successor) + i, 1))
+        i += 1
 
     return graph
 
 def load_graph_heredoc(representation):
     num_vertices = int(input("Enter the number of vertices:\n> "))
     graph = None
+    i = 0
 
     if representation == 2:
         graph = [[] for _ in range(num_vertices)]
     elif representation == 1:
         graph = [[0] * num_vertices for _ in range(num_vertices)]
     elif representation == 3:
-        graph = [[False] * num_vertices for _ in range(num_vertices)]
+        graph = [[] for _ in range(num_vertices)]
     else:
         raise ValueError("Incorrect graph representation")
 
@@ -51,6 +54,7 @@ def load_graph_heredoc(representation):
                 graph[vertex][int(successor)] = 1
         elif representation == 3:
             for successor in successors:
-                graph[vertex][int(successor)] = True
+                graph[vertex].append((int(successor) + i, 1))
+        i += 1
 
     return graph
