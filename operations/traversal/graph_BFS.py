@@ -45,7 +45,7 @@ def bfs(graph, representation):
             choice = int(input('Where should program start looking form:\n> '))
             break
         except ValueError:
-            print("Invalid input. Please enter a valid number.")
+            print("\nInvalid input. Please enter a valid number.")
     print('\n')
 
     if representation == 1:

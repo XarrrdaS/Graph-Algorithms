@@ -28,4 +28,4 @@ def display_graph(graph, representation):
 
 
     else:
-        print("Invalid representation selected.")
+        print("\nInvalid representation selected.")

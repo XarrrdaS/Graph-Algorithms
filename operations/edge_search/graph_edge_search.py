@@ -2,7 +2,7 @@ def search_edges_1_matrix(graph, start, end):
     start = int(start)
     end = int(end)
     if start >= len(graph) or end >= len(graph):
-        print("Start or end index is out of bounds.")
+        print("\nStart or end index is out of bounds.")
         return []
     edges = []
     for i in range(start, end+1):
@@ -33,13 +33,13 @@ def search(graph, representation):
             start = int(input('From:\n> '))
             break
         except ValueError:
-            print("Invalid input. Please enter a valid number.")
+            print("\nInvalid input. Please enter a valid number.")
     while True:
         try:
             end = int(input('To:\n> '))
             break
         except ValueError:
-            print("Invalid input. Please enter a valid number.")
+            print("\nInvalid input. Please enter a valid number.")
 
     if representation == 1:
         edges = search_edges_1_matrix(graph, start-1, end-1)

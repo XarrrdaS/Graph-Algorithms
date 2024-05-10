@@ -21,7 +21,7 @@ def kahn_matrix(graph):
                     queue.append(i)
 
     if len(top_order) != n:
-        print("Graph contains a cycle")
+        print("\nGraph contains a cycle")
     print("\n",top_order)
 
 def kahn_list(graph):
@@ -46,7 +46,7 @@ def kahn_list(graph):
                 queue.append(neighbor)
 
     if len(top_order) != n:
-        print("Graph contains a cycle")
+        print("\nGraph contains a cycle")
     print("\n", top_order)
 
 
@@ -72,7 +72,7 @@ def kahn_table(graph):
                 queue.append(neighbor[0])
 
     if len(top_order) != n:
-        print("Graph contains a cycle")
+        print("\nGraph contains a cycle")
     print("\n", top_order)
 
 def kahn(graph, representation):
