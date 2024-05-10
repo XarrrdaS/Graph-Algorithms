@@ -58,7 +58,7 @@ def generate(representation):
     
     while True:
         try:
-            saturation = float(input("Specify the saturation value (between 0 and 100):\n> "))
+            saturation = float(input("\nSpecify the saturation value (between 0 and 100):\n> "))
             if 0 <= saturation <= 100:
                 break
             else:
