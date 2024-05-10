@@ -5,7 +5,7 @@ def generate_dag_matrix(nodes, saturation):
 
     saturation = saturation / 100
 
-    edges = int(saturation * nodes * (nodes - 1))
+    edges = int(saturation * nodes * (nodes - 1)) / 2
     i = 0
     while edges > 0 and i < nodes:
         for j in range(i+1, nodes):
@@ -21,7 +21,7 @@ def generate_dag_list(nodes, saturation):
 
     saturation = saturation / 100
 
-    edges = int(saturation * nodes * (nodes - 1))
+    edges = int(saturation * nodes * (nodes - 1)) / 2
     i = 0
     while edges > 0 and i < nodes:
         for j in range(i+1, nodes):
@@ -37,7 +37,7 @@ def generate_dag_table(nodes, saturation):
 
     saturation = saturation / 100
 
-    edges = int(saturation * nodes * (nodes - 1))
+    edges = int(saturation * nodes * (nodes - 1)) / 2
     i = 0
     while edges > 0 and i < nodes:
         for j in range(i+1, nodes):
