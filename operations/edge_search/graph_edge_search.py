@@ -1,9 +1,4 @@
 def search_edges_1_matrix(graph, start, end):
-    start = int(start)
-    end = int(end)
-    if start >= len(graph) or end >= len(graph):
-        print("\nStart or end index is out of bounds.")
-        return []
     edges = []
     for i in range(start, end+1):
         for j in range(len(graph[i])):
@@ -31,24 +26,22 @@ def search(graph, representation):
     while True:
         try:
             start = int(input('From:\n> '))
-            break
-        except ValueError:
-            print("\nInvalid input. Please enter a valid number.")
-    while True:
-        try:
             end = int(input('To:\n> '))
             break
         except ValueError:
             print("\nInvalid input. Please enter a valid number.")
 
-    if representation == 1:
-        edges = search_edges_1_matrix(graph, start-1, end-1)
-    elif representation == 2:
-        edges = search_edges_2_list(graph, start-1, end-1)
-    elif representation == 3:
-        edges = search_edges_3_table(graph, start-1, end-1)
-
-    if edges:
-        print("\nEdge exists in the graph.")
+    if start >= len(graph) or end >= len(graph):
+        print("\nStart or end index is out of bounds.")
     else:
-        print("\nEdge does not exist in the graph.")
+        if representation == 1:
+            edges = search_edges_1_matrix(graph, start-1, end-1)
+        elif representation == 2:
+            edges = search_edges_2_list(graph, start-1, end-1)
+        elif representation == 3:
+            edges = search_edges_3_table(graph, start-1, end-1)
+            
+        if edges:
+            print("\nEdge exists in the graph.")
+        else:
+            print("\nEdge does not exist in the graph.")

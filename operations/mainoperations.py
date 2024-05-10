@@ -4,10 +4,11 @@ from operations.traversal.graph_BFS import bfs
 from operations.traversal.graph_DFS import dfs
 from operations.topological_sort.kahn import kahn
 from operations.topological_sort.tarjan import tarjan
+from operations.export.export import export_tikz
 
 def main_operations(graph, representation):
     while True:
-            print('\n| 1 - Graph display | 2 - Graph find edge | 3 - BFS | 4 - DFS | 5 - Kahn (BFS) | 6 - Tarjan (DFS) | 7 - Exit to graph loading options | 8 - Close a program completely |\n')
+            print('\n| 1 - Graph display | 2 - Graph find edge | 3 - BFS | 4 - DFS | 5 - Kahn (BFS) | 6 - Tarjan (DFS) | 7 - Export | 8 - Exit to graph loading options | 9 - Close a program completely |\n')
             choice = input('Select an option you would like to take action with:\n> ')
 
             if choice == '1':
@@ -36,9 +37,19 @@ def main_operations(graph, representation):
 
             elif choice == '7':
             
-                break
+                filename = input('\nEnter the name of the file you want to export the graph to:\n> ')
+                success = export_tikz(graph, filename, representation)
+                if success == 1:
+                    print("\nExporting the graph to a file...")
+                    print("Exporting the graph to a file has been completed!\n")
+                else:
+                    print("\nExporting the graph to a file has been failed!\n")
 
             elif choice == '8':
+            
+                break
+
+            elif choice == '9':
             
                 exit()
 
