@@ -39,8 +39,12 @@ def dfs_table(graph, start):
     return visited
 
 def dfs(graph, representation):
-
-    choice = int(input('Where should program start looking form:\n> '))
+    while True:
+        try:
+            choice = int(input('Where should program start looking form:\n> '))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
     print('\n')
 
     if representation == 1:

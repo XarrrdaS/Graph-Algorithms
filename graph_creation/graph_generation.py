@@ -49,8 +49,22 @@ def generate_dag_table(nodes, saturation):
     return adjacency_table
 
 def generate(representation):
-    nodes = int(input("\nInsert nodes number:\n> "))
-    saturation = float(input("Specify the saturation value (between 0 and 100):\n> "))
+    while True:
+        try:
+            nodes = int(input("\nInsert nodes number:\n> "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+    
+    while True:
+        try:
+            saturation = float(input("Specify the saturation value (between 0 and 100):\n> "))
+            if 0 <= saturation <= 100:
+                break
+            else:
+                print("Invalid input. Please enter a value between 0 and 100.")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
     
     if representation == 1:
         adjacency_matrix = generate_dag_matrix(nodes, saturation)

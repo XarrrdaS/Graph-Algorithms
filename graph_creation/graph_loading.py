@@ -1,5 +1,11 @@
 def load_graph(representation):
-    num_vertices = int(input("Insert nodes number:\n> "))
+    while True:
+        try:
+            num_vertices = int(input("Insert nodes number:\n> "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
     graph = None
 
     if representation == 2:
@@ -12,7 +18,12 @@ def load_graph(representation):
         raise ValueError("Incorrect graph representation")
 
     for vertex in range(num_vertices):
-        successors = input(f"Specify the successors of the vertex {vertex+1}: ").split()
+        while True:
+            try:
+                successors = input(f"Specify the successors of the vertex {vertex+1}: ").split()
+                break
+            except ValueError:
+                print("Invalid input. Please enter a valid number.")
 
         if representation == 2:
             graph[vertex] = [int(successor) for successor in successors]
@@ -26,7 +37,13 @@ def load_graph(representation):
     return graph
 
 def load_graph_heredoc(representation):
-    num_vertices = int(input("Enter the number of vertices:\n> "))
+    while True:
+        try:
+            num_vertices = int(input("Enter the number of vertices:\n> "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
     graph = None
 
     if representation == 2:
@@ -38,7 +55,13 @@ def load_graph_heredoc(representation):
     else:
         raise ValueError("Incorrect graph representation")
 
-    input_data = input("Enter data using heredoc:\n> ")
+    while True:
+        try:
+            input_data = input("Enter data using heredoc:\n> ")
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+            
     lines = input_data.strip().split('\n')
 
     for vertex, line in enumerate(lines):

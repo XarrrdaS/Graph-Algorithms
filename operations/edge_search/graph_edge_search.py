@@ -28,8 +28,18 @@ def search_edges_3_table(graph, start, end):
 
 def search(graph, representation):
     print('\n| Where program should look for edges |\n')
-    start = int(input('From:\n> '))
-    end = int(input('To:\n> '))
+    while True:
+        try:
+            start = int(input('From:\n> '))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+    while True:
+        try:
+            end = int(input('To:\n> '))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
 
     if representation == 1:
         edges = search_edges_1_matrix(graph, start-1, end-1)
